@@ -11,7 +11,10 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v3
       - name: Compile LaTeX document
-        run: latexmk math.tex
+        run: |
+          platex math.tex
+          platex math.tex
+          dvipdfmx math.dvi
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
