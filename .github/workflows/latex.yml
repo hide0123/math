@@ -11,10 +11,7 @@ jobs:
       - name: Set up Git repository
         uses: actions/checkout@v3
       - name: Compile LaTeX document
-        run: |
-          platex math.tex
-          platex math.tex
-          dvipdfmx math.dvi
+        run: lualatex math.tex
       - name: Upload PDF file
         uses: actions/upload-artifact@v3
         with:
